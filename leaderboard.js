@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { motion } from "framer-motion";
+import "../styles/animations.css";
 
 const Leaderboard = () => {
   const [users, setUsers] = useState([]);
@@ -17,16 +19,27 @@ const Leaderboard = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Leaderboard</h1>
+    <motion.div
+      className="leaderboard-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <h1 className="slide-in-left visible">Leaderboard</h1>
       <ul>
         {users.map((user, index) => (
-          <li key={index}>
+          <motion.li
+            key={index}
+            className="bounce"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+          >
             {index + 1}. {user.username} - {user.points} points
-          </li>
+          </motion.li>
         ))}
       </ul>
-    </div>
+    </motion.div>
   );
 };
 
