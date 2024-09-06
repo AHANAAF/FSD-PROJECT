@@ -1,74 +1,53 @@
-**Project Summary: WordWiz App**
-**
-**WordWiz is an educational app designed to assist children in reading and writing with the aid of machine learning and interactive features. The app integrates various technologies to provide a fun and engaging learning experience, combining text-to-speech, NLP, image recognition, and gamification elements.**
-**
-**Key Features**
+_**WordWiz**_
 
-Mobile Authentication:
+**WordWiz is an educational application designed to assist children in learning to read and write through interactive features and advanced machine learning techniques. This app incorporates various natural language processing (NLP) tools and animations to create an engaging learning experience.**
 
-Allows users to authenticate using their mobile number through Firebase.
-Ensures secure access and user identification.
-Reading Assistance:
+**Features**
 
-Utilizes text-to-speech (TTS) to read words aloud.
-Provides a simple interface for users to read and understand words.
-Writing Assistance:
+**1. Spelling and Grammar Checks**
 
-Offers an interactive writing practice feature with word prompts and images.
-Uses NLP to assist with spelling and writing accuracy.
-Leaderboard:
-
-Displays top-performing users based on points earned.
-Encourages friendly competition and motivates children to improve.
-Achievements & Badges:
-
-Rewards users with badges based on their progress and achievements.
-Includes a system for unlocking badges as users reach milestones.
-
-Points System:
-
-Tracks and displays points earned through reading and writing exercises.
-Provides visual feedback to motivate and reward users.
-Interactive Animations:
-
-Includes animations to make learning more engaging.
-Provides visual and interactive feedback during exercises.
-Tech Stack
-Frontend:
-
-React: Used for building the user interface.
-Firebase: Handles mobile authentication and user management.
-Axios: Manages API requests to the backend.
-React Router: Handles navigation within the app.
-Backend:
-
-Node.js & Express: Manages server-side logic and API endpoints.
-MongoDB: Stores user data, points, achievements, and leaderboard information.
-Mongoose: Provides a schema-based solution for modeling data.
-Machine Learning:
-
-Firebase ML Kit: Used for text-to-speech and image recognition.
-Custom ML Models: Optional integration for advanced NLP features.
+NLP Tool Used: LanguageTool
+Description: Checks for spelling and grammar errors in the text. Provides feedback on errors including the type and location within the text.
+Backend: Utilizes the language-tool library to analyze text.
+Frontend: React component allows users to input text and view errors.
 
 
-**Deployment:**
+**2. Contextual Suggestions**
 
-**Frontend: Deployed on platforms like Vercel, Netlify, or GitHub Pages.
-Backend: Deployed on platforms like Heroku, Vercel, or AWS.**
+NLP Tool Used: TextgenRNN
+Description: Provides contextual suggestions and text completions based on user input.
+Backend: Uses the textgenrnn library to generate text suggestions.
+Frontend: React component enables users to get and view text suggestions.
 
-**Implementation Steps**
 
-Set Up Firebase: Configure Firebase for mobile authentication and integrate it with the React app.
+**3. Text Analysis**
 
-Develop Backend: Set up MongoDB, create models for user data, and build API routes for authentication, leaderboard, and achievements.
+ NLP Tool Used: Google Cloud Natural Language API
+Description: Analyzes text for sentiment, extracting information about the emotional tone of the content.
+Backend: Integrates Google Cloud Natural Language API for sentiment analysis.
+Frontend: React component displays sentiment analysis results including score and magnitude.
 
-Create React Components: Develop components for authentication, reading, writing, leaderboard, achievements, and animations.
 
-Integrate Features: Connect frontend components with backend APIs and Firebase authentication.
+**4. Read-Aloud Timer**
 
-Testing: Run and test the application locally, ensuring all features work as expected.
+NLP Tool Used: Web Speech API
+Description: Reads aloud text to the user with a timer of 10 seconds. Useful for auditory learning and practice.
+Frontend: React component uses the Web Speech API to perform the read-aloud functionality with a time limit.
 
-Deployment: Deploy the frontend and backend to cloud services, update Firebase settings for your deployment domain.
 
-**Summary**
-WordWiz is an educational tool that leverages technology to enhance children's learning experiences. By combining secure authentication, interactive learning features, and gamification elements, it aims to make reading and writing engaging and enjoyable for young learners. The project uses a modern tech stack to deliver a seamless and interactive educational experience.
+**Tech Stack**
+
+Frontend: React.js for building interactive user interfaces.
+Backend: Node.js with Express.js for handling API requests and processing data.
+Database: MongoDB for storing user data and application state.
+Machine Learning Libraries: language-tool, textgenrnn, and Google Cloud NLP API.
+Authentication: Mobile number verification for secure user authentication.
+
+**Usage**
+
+Spelling and Grammar Checks: Enter text into the provided field and click "Check Grammar" to view spelling and grammar issues.
+Contextual Suggestions: Enter text and click "Get Suggestions" to receive contextually relevant text suggestions.
+Text Analysis: Input text and click "Analyze Text" to view sentiment analysis results.
+Read-Aloud Timer: Click "Read Aloud" to have the text read aloud with a 10-second timer.
+
+
