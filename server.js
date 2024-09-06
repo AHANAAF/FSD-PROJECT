@@ -15,6 +15,8 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/leaderboard', require('./routes/leaderboard'));
 app.use('/api/spellcheck', require('./routes/spellcheck'));  // Add this line
 app.use('/api/grammarcheck', require('./routes/grammarCheck'));
+app.use('/api/suggestions', require('./routes/suggestions'));
+app.use('/api/textanalysis', require('./routes/textAnalysis'));
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
