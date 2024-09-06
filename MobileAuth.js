@@ -34,7 +34,7 @@ const MobileAuth = () => {
 
   return (
     <motion.div
-      className="mobile-auth-container"
+      className="mobile-auth-container fade-in"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -46,8 +46,9 @@ const MobileAuth = () => {
         value={phoneNumber}
         onChange={(e) => setPhoneNumber(e.target.value)}
         placeholder="Enter phone number"
+        className="input"
       />
-      <button onClick={requestOtp}>Request OTP</button>
+      <button className="button" onClick={requestOtp}>Request OTP</button>
       {verificationId && (
         <>
           <input
@@ -55,8 +56,9 @@ const MobileAuth = () => {
             value={otp}
             onChange={(e) => setOtp(e.target.value)}
             placeholder="Enter OTP"
+            className="input"
           />
-          <button onClick={verifyOtp}>Verify OTP</button>
+          <button className="button" onClick={verifyOtp}>Verify OTP</button>
         </>
       )}
     </motion.div>
@@ -64,4 +66,3 @@ const MobileAuth = () => {
 };
 
 export default MobileAuth;
-
