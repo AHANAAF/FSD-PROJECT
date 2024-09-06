@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { auth } from "../firebase";
 import firebase from "firebase/app";
+import { motion } from "framer-motion";
+import "../styles/animations.css";
 
 const MobileAuth = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -31,8 +33,13 @@ const MobileAuth = () => {
   };
 
   return (
-    <div>
-      <h1>Mobile Authentication</h1>
+    <motion.div
+      className="mobile-auth-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <h1 className="fade-in visible">Mobile Authentication</h1>
       <div id="recaptcha-container"></div>
       <input
         type="text"
@@ -52,8 +59,9 @@ const MobileAuth = () => {
           <button onClick={verifyOtp}>Verify OTP</button>
         </>
       )}
-    </div>
+    </motion.div>
   );
 };
 
 export default MobileAuth;
+
