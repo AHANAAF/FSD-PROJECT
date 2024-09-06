@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { motion } from "framer-motion";
+import "../styles/animations.css";
 
 const Achievements = ({ userId }) => {
   const [achievements, setAchievements] = useState([]);
@@ -17,14 +19,26 @@ const Achievements = ({ userId }) => {
   }, [userId]);
 
   return (
-    <div>
-      <h1>Your Achievements</h1>
+    <motion.div
+      className="achievements-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <h1 className="slide-in-right visible">Your Achievements</h1>
       <ul>
         {achievements.map((achievement, index) => (
-          <li key={index}>{achievement}</li>
+          <motion.li
+            key={index}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: index * 0.2 }}
+          >
+            {achievement}
+          </motion.li>
         ))}
       </ul>
-    </div>
+    </motion.div>
   );
 };
 
